@@ -14,13 +14,14 @@ to the webserver.js file so you can add and debug your own services.
     exectue the following command in the terminals after having installed node.js and thereby also npm.
     `sudo npm install -g node-inspector`
     once the node-inspector install has finished you'll be able to debug node.js.
+    `node Servers/WebServer.js --debug`
 
 ## Howto:
   copy JoopNode content to any folder on your disk to share it as a webserver.  
   With any JoopNode folder as cwd you can enter the following commands to share.
   
   `node Servers/WebServer.js` to start the webserver by default  
-  `node Servers/WebServer.js 9999` to start the webserver on port 9999  
+  `node Servers/WebServer.js --PORT 9999` to start the webserver on port 9999  
   
   The webserver will automaticly open a new browser window displaying your index.html file.  
   Or you can open it yourself at `http://127.0.0.1:1337` as indicated by the server itself.  
