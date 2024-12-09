@@ -65,6 +65,11 @@ console.log( "Serving files out of: ".green + servePath );
 console.log('CTRL+C to shutdown'.red);
 
 var webServer = http.createServer(function(request, response) {
+    if (path.normalize(decodeURI(request.url)) !== decodeURI(request.url)) {
+        response.statusCode = 403;
+        response.end();
+        return;
+    }
   var uri = url.parse(request.url).pathname,
       filename = path.join( servePath, uri );
 
